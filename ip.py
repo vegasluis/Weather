@@ -12,16 +12,19 @@ class myIP:
         self.myip = 0
 
     def __str__(self):
-        return str(self.myip) 
+        return str(self.myip)
     
     def getIP(self):
         url = 'http://httpbin.org/ip'
-        self.myip = json.load(urllib.urlopen(url))['origin']
-        return str(self.myip)  
+        self.myip =str(json.load(urllib.urlopen(url))['origin'])
 
+    def retIP(self):
+        return str(self.myip)
+    
 def main():
     IP = myIP()
-    print(IP.getIP())
+    IP.getIP()
+    print(IP)
 
 
 if __name__ == "__main__":
